@@ -137,6 +137,36 @@ li:hover {
 	width: 100%;
 
 }
+
+.filters{
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+	padding :10px 10px;
+	margin-bottom: 40px;
+}
+
+.filters button{
+	padding :10px 20px;
+	margin:5px 10px;
+	border-radius: 20px;
+	font-family: 'Syne';
+	font-size: medium;
+	border:1px solid #1D6154;
+	color:#1D6154;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.filters button:nth-child(1){
+	color:#fff;
+	background-color: #1D6154;
+}
+
+.filters button:hover{
+	transform:scale(1.06);
+}
+
 #contact {
 	width: 50%;
 margin: auto;
