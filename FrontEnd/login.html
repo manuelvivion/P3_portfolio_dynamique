@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Sophie Bluel - Login Administrateur</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="./assets/style.css">
+	<!-- only 1 external js file, as a module, defer to make it wait -->
+	<script type="module" src="assets/js/login.js" defer></script> 
+</head>
+<body>
+
+	<div class="main-container">
+
+		<header>
+			<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+			<nav>
+				<ul>
+					<li><a href="index.html#portfolio">projets</a></li>
+					<li><a href="index.html#contact">contact</a></li>
+					<li class="link-bold">login</li>
+					<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			
+			<section id="form-login">
+				<h2>Log in</h2>
+                <form>
+                    <label>E-mail</label>
+                    <input type="email" name="input-email" id="input-email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+                    <label>Mot de passe</label>
+                    <input type="password" name="input-pwd" id="input-pwd" required minlength="4">
+                    <p class="error-msg"></p>
+                    <button>Se connecter</button>
+                </form>
+                <a>mot de passe oublié</a>
+			</section>
+			
+		</main>
+
+		<footer>
+			<nav>
+				<ul>
+					<li>Mentions Légales</li>
+				</ul>
+			</nav>
+		</footer>
+	</div> <!-- end main container -->
+</body>
+</html>

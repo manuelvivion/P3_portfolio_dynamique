@@ -22,14 +22,18 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	text-decoration: none;
+	
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
+	background-color: #fffef8;
 }
 ol, ul {
 	list-style: none;
@@ -53,6 +57,13 @@ body {
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
+
+.main-container{
+	margin :0px auto;
+	padding:0px 50px;
+	max-width: 1440;
+}
+
 header {
 	display: flex;
 	justify-content: space-between;
@@ -95,8 +106,16 @@ nav li {
 	font-size: 1.2em;
 }
 
+a:visited{ /* color of the links */
+	color: #1D6154
+}
+
 li:hover {
 	color: #B1663C;
+}
+
+.link-bold{
+	font-weight: bold;
 }
 #introduction {
 	display: flex;
@@ -154,18 +173,79 @@ li:hover {
 	font-size: medium;
 	border:1px solid #1D6154;
 	color:#1D6154;
-	background-color: #fff;
+	background-color: #fffef8;
 	cursor: pointer;
 }
 
-.filters button:nth-child(1){
+/* .filters button:nth-child(1){
 	color:#fff;
 	background-color: #1D6154;
-}
+} */
 
 .filters button:hover{
 	transform:scale(1.06);
 }
+
+#form-login {
+	text-align: center;
+	margin-top : 100px;
+	margin-bottom: 400px;
+}
+
+#form-login form{
+	margin : 30px auto;
+	width : 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#form-login label{
+	text-align: left;
+}
+
+#form-login input{
+	padding : 20px 10px;
+	margin-bottom: 25px;
+	margin-top: 5px;
+	border: none;
+	filter: drop-shadow(4px 6px 8px rgba(0,0,0,0.15));
+}
+
+#form-login button{
+	width:50%;
+	margin:auto;
+	margin-top:20px;
+	padding : 10px 15px;
+	background-color: #1D6154;
+	color:#fff;
+	font-family: 'Syne';
+	border-radius: 20px;
+	border: none;
+	cursor: pointer;
+}
+
+#form-login a{
+	color:#000;
+	text-decoration: underline;
+}
+
+.error-msg{
+	color:red;
+	height:20px;
+}
+
+
+/* special classes to toggle with JS */
+.input-invalid{
+	border: 1px solid red !important;
+}
+
+.selected-category{ /* change button colors */
+	color:#fff !important;
+	background-color: #1D6154 !important;
+}
+/* End special classes */
 
 #contact {
 	width: 50%;
@@ -209,6 +289,7 @@ input[type="submit"]{
 	text-align: center;
 	border-radius: 60px ;
 }
+
 
 footer nav ul {
 	display: flex;

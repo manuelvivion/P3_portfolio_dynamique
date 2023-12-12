@@ -2,6 +2,7 @@
 export function genererProjetsDom(projets) { //we get all projects datas from the api to show them on the website, in the div "gallery"
     
     try{ // we cature errors to tell the user
+
         const divGallery = document.querySelector(".gallery"); 
         divGallery.innerHTML=""; //delete the gallery if we already have content
 
@@ -31,6 +32,7 @@ export function genererFiltresDom(categories,projets) { //we get all categories 
 
         let btAll= document.createElement("button"); //we create a button to display all categories
             btAll.dataset.id=0; //we add current id in data-id
+            btAll.classList.add("selected-category");  //green olive background by defult
             btAll.innerHTML="Tous";
             divFilters.appendChild(btAll); //when ready, we add button to html content
            
@@ -59,7 +61,10 @@ export function genererFiltresDom(categories,projets) { //we get all categories 
 
 }// end of function generercategoriesDom
 
-function sortProjects(id,projets){
+function sortProjects(id,projets){ //update the gallery display according to user's choice (=button dataset id)
+
+    sessionStorage.setItem("selected-category", id );
+    remindButton(id); //call the function to highlight current category button
 
     try{ // we cature errors to tell the user
         const divGallery = document.querySelector(".gallery"); 
@@ -82,3 +87,13 @@ function sortProjects(id,projets){
 
 }// end function sortProjects
 
+function remindButton(id){ //highlight the button of current selected category
+    const listButtons = document.querySelectorAll(".filters button");
+    for (let i=0;i<listButtons.length;i++){
+        listButtons[i].classList.remove("selected-category"); //remove every possible highlight
+            if(i==id){
+                listButtons[i].classList.add("selected-category"); //highlight only correct button (idcategory)
+            }
+    }
+
+}//end of remindButton function

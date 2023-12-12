@@ -2,8 +2,7 @@ import {configServerAddress} from '../config/config.js';
 import {getAllWorks, getAllCategories} from './req-api/requetes.js';
 import {genererProjetsDom, genererFiltresDom} from './display-dom/display-projects.js';
 
-/* Global vars = */
-let listProjects=[]; //array to save the result of api request
+/* Global session vars = */
 /* ------------ */
 
 let url = await configServerAddress(); // get actual host adress ; beta, dev, prod
