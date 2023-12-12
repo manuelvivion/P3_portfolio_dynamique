@@ -1,6 +1,7 @@
 import {configServerAddress} from '../config/config.js';
 import {getAllWorks, getAllCategories} from './req-api/requetes.js';
 import {genererProjetsDom, genererFiltresDom} from './display-dom/display-projects.js';
+import {genererEditMode} from './display-dom/display-edit-mode.js';
 
 /* Global session vars = */
 /* ------------ */
@@ -14,3 +15,5 @@ let categories = await getAllCategories(url); //api request  to get all categori
 genererProjetsDom(projets); //display projects on the website
 
 genererFiltresDom(categories,projets); //display categories filters on the website
+
+genererEditMode(); //display editing tool and black top banner

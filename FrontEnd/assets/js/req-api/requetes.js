@@ -85,9 +85,12 @@ export async function loginAdmin(url){
             // Stockage des informations dans le localStorage
         
         if (profilInfos.token){ // request and identification went right, we get a token back
-            window.localStorage.setItem("token", tabInfos);
+            sessionStorage.setItem("token", tabInfos);
             loginOK=true;
-        }    
+        }   
+        else{
+            sessionStorage.setItem("token", "");
+        } 
 
     
         return loginOK;
