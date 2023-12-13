@@ -102,3 +102,7 @@ export async function loginAdmin(url){
     }// end of catch
 
 }
+
+export async function deleteProject(url,id){
+    alert(url+"projet à effacer : "+id);
+}
