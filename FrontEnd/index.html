@@ -15,10 +15,31 @@
 	<script type="module" src="assets/js/main.js" defer></script> 
 </head>
 <body>
-	<div class="editor-mode"> 
+	<!-- ------ -------- modal    ---------->
+	<aside id="modal1" class="modal" role="dialog"> <!-- black bg container  -->
+		<div class="modal-wrapper"> <!-- main white block -->
+			<div class="modal-header">
+				<i class="modal-btn-back"></i> <!-- class="fa-solid fa-arrow-left" to add with js -->
+				<i class="modal-btn-close fa-solid fa-xmark"></i>
+			</div>
+			<div class="modal-content">
+				<h3><!-- created in JS --></h3>
+				<div class="modal-content-main"> <!-- css style and content created in js -->
+					
+				</div>
+				<div class="modal-content-footer">
+					<button class="modal-btn-valid"><!-- Txt created in Js --></button>
+				</div>
+			</div>
+		</div> <!-- end of main white block -->
+	</aside> <!-- end of bg container -->
+	<!-- ------------- End of modal ------------ -->
+
+	<!-- ------- black banner displayed if admin connected ------- -->
+	<div class="editor-mode">  
 		<p><i class="fa-regular fa-pen-to-square"></i>Mode édition</p>
 	</div>
-
+	<!-- ---------- end of black banner ----------- -->
 	<div class="main-container">
 		<header>
 			<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
@@ -44,7 +65,12 @@
 				</article>
 			</section>
 			<section id="portfolio">
-				<h2>Mes Projets</h2>
+				<div class="portfolio-title-line">
+					<p></p> <!-- empty div to keep a 33% ratio with title centered -->
+					<h2>Mes Projets </h2>
+					<p class="btn-modify"></p> <!-- div to show the modify button -->
+				</div>
+				
 				<div class="filters"></div> <!-- JS will fill this div, style in css file  -->
 				<div class="gallery"></div> <!-- JS will fill this div, style in css file   -->
 			</section>
