@@ -94,11 +94,13 @@ body {
 	margin:auto;
 	padding : 20px 5px;
 	text-align: center;
+	
 }
 
 .modal-content-main{ /* more attributes defined in js */
 	display: flex;
 	padding : 20px 5px;
+	
 }
 .modal-content-footer{
 	margin-top :20px;
@@ -348,6 +350,53 @@ li:hover {
 	color:#000;
 	text-decoration: underline;
 }
+
+/* ------- formulaire modal nouvelle image --------- */
+.form-new-project{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.form-new-project label{
+	text-align: left;
+}
+
+.form-select-picture{
+	display: flex;
+	flex-direction: column;
+	background-color: #e8f1f6;
+	padding: 20px 10px;
+	margin : 20px 0px;
+	height : 170px;
+}
+.form-select-picture i {
+	color: #b9c5cc;
+	font-size:65px;
+}
+
+label[for="input-new-file"] {
+	max-width:180px;
+	margin : 20px auto;
+	text-align: center;
+	cursor: pointer;
+	padding : 10px 20px;
+	background-color: #b9c5cc;
+	color : #306685;
+	border-radius: 20px;
+}
+#input-new-title, #select-new-category{
+	background-color: #fff;
+	padding : 15px 10px;
+	margin-bottom: 25px;
+	margin-top: 5px;
+	border: none;
+	filter: drop-shadow(4px 6px 8px rgba(0,0,0,0.15));
+}
+
+#new-file-name{
+	font-size: small;
+}
+/* --------- fin formulaire modal ------- */
 
 .error-msg{
 	color:red;

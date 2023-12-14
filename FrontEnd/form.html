@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>Sophie Bluel - Architecte d'intérieur</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="./assets/style.css">
+	<!-- download Font   awesome library after the whole page -->
+    <script src="https://kit.fontawesome.com/365a5d9ce1.js" crossorigin="anonymous"></script>
+	<!-- only 1 external js file, as a module, defer to make it wait -->
+	
+</head>
+<body>
+    <div class="modal-wrapper"> <!-- main white block -->
+        <div class="modal-header">
+            <i class="modal-btn-back"></i> <!-- class="fa-solid fa-arrow-left" to add with js -->
+            <i class="modal-btn-close fa-solid fa-xmark"></i>
+        </div>
+        <div class="modal-content">
+            <h3><!-- created in JS --></h3>
+            <div class="modal-content-main"> <!-- css style and content created in js -->
+                <form class="form-new-project">
+                    <div class="form-select-picture">
+                        <i class="fa-regular fa-image"></i>
+                        <input type="file" name="input-new-file" id="input-new-file" hidden>
+                        <!--our custom file upload button-->
+                        <label for="input-new-file">+ Ajouter photo</label>
+                        <p id="new-file-name">.jpg .png 4Mo max.</p>
+                    </div>
+                    <label>Titre</label>
+                    <input type="text" name="input-new-title" id="input-new-title">
+                    <label>Catégorie</label>
+                    <select id="select-new-category">
+                        <option value="1">Catégorie 1</option>
+                        <option value="2">Catégorie 2</option>
+                        <option value="3">Catégorie 3</option>
+                    </select>
+                </form>
+            </div>
+            <div class="modal-content-footer">
+                <button class="modal-btn-valid"><!-- Txt created in Js --></button>
+            </div>
+        </div>
+    </div> <!-- end of main white block -->
+</body>
+</html>

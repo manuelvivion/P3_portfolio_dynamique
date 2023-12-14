@@ -106,3 +106,41 @@ export async function loginAdmin(url){
 export async function deleteProject(url,id){
     alert(url+"projet à effacer : "+id);
 }
+
+export async function addNewProject(url,body){
+    try{
+        let auth = JSON.parse(window.sessionStorage.getItem("token"));
+        console.log(auth.token);
+        console.log(body);
+       // envoie requete post à l'API
+                const reponse = await fetch(`${url}works`,{
+                    method: "POST",
+                    headers: { 
+                    accept : "application/json",
+                    Authorization: `Bearer ${auth.token}`
+                    },
+                    body: body
+                });//end fetch
+            
+        let addedProject = await reponse.json(); //object
+        console.log("status: "+reponse.status);
+        
+        if (reponse.status == 201){
+            window.localStorage.removeItem("projets");
+        }
+
+        else{
+            addedProject = {};
+            throw new error("L'ajout du nouveau projet n'a pas pus s'effectuer correctement");
+        }
+
+        return [reponse.status,addedProject];
+    
+        
+
+    } // End of try
+    catch(erreur){
+        //console.log("Une erreur est survenue : " + error.message)
+        alert("Une erreur est survenue : " + erreur.message+" Contactez l'administrateur du site")
+    }// end of catch
+}
