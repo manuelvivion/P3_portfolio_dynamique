@@ -1,0 +1,5 @@
+{
+    "liveServer.settings.ignoreFiles":[
+        "**/*.sqlite" //don't refresh the page when sqlite file is updated
+    ]
+}

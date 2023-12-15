@@ -125,11 +125,11 @@ export async function addNewProject(url,body){
         let addedProject = await reponse.json(); //object
         console.log("status: "+reponse.status);
         
-        if (reponse.status == 201){
-            window.localStorage.removeItem("projets");
+        if (reponse.status == 201){ //if insertion went good
+            window.localStorage.removeItem("projets"); //we delete localstorage to force request to the server to reload projects added recently
         }
 
-        else{
+        else{ // if problem when inserting
             addedProject = {};
             throw new error("L'ajout du nouveau projet n'a pas pus s'effectuer correctement");
         }
