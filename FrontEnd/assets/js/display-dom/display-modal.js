@@ -96,9 +96,15 @@ async function displayGalleryModal(){ //display vignettes with clickable delete 
        article.appendChild(icon);
        let url = await configServerAddress(); // get actual host adress ; beta, dev, prod
        icon.addEventListener("click",async function(event){ //click on trashcan -> delete project
-            await deleteProject(url, event.target.dataset.id); //call delete function from requete module
+            let resp = await deleteProject(url, event.target.dataset.id); //call delete function from requete module
             //update projets gallery in main window
             //update modal gallery
+            if (resp[0]===200){ //if response status sent from api is 201 (insertion ok)
+        
+                let projets = await getAllWorks(url); // api request  to get all projects
+                genererProjetsDom(projets); //refresh the display of all projects on the website
+                closeModal(); //close the modal
+            }
        });
 
 
