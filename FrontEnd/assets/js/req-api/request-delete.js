@@ -1,6 +1,6 @@
 
 export async function deleteProject(url,id){
-    alert(url+"projet à effacer : "+id);
+    //alert(url+"projet à effacer : "+id);
  
      try{
          let authToken = window.sessionStorage.getItem("token");

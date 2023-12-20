@@ -1,6 +1,6 @@
 import {deleteProject} from '../../req-api/request-delete.js';
 import {configServerAddress} from '../../../config/config.js';
-import {updateMainGallery} from './display-modal.js';
+import {updateMainGallery, showEditingModal} from './display-modal.js';
 
 let container = document.querySelector(".modal-content-main"); //* * * get Dom element from the modal in html
 
@@ -28,7 +28,8 @@ export async function displayGalleryModal(){ //* * * display vignettes with clic
        icon.dataset.id=project.id; //* * * we save the id of current project in the dataset
        article.appendChild(icon);
        icon.addEventListener("click",function(event){
-            deleteSelectedProject(event);
+            sessionStorage.setItem("idProjet", event.target.dataset.id);
+            showEditingModal(3);
        });
 
     } //* * *  end for each project
@@ -36,11 +37,11 @@ export async function displayGalleryModal(){ //* * * display vignettes with clic
 
 } //* * *  end of function display modal gallery
 
-export async function deleteSelectedProject(event){ //* * * click on trashcan -> delete project
+export async function deleteSelectedProject(idProjet){ //* * * click on trashcan -> delete project
         let url = await configServerAddress(); //* * *  get actual host adress ; beta, dev, prod
-        let resp = await deleteProject(url, event.target.dataset.id); //* * * call delete function from requete module
+        let resp = await deleteProject(url, idProjet); //* * * call delete function from requete module
         
         if (resp === 204){ //* * * if response status sent from api is 201 (insertion ok)
-            await updateMainGallery(); //* * * update projets gallery in main window
+            await updateMainGallery(false); //* * * update projets gallery in main window. parameter false : no need confirmation modal
         }
    }

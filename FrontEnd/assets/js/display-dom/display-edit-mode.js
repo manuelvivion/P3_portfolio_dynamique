@@ -2,19 +2,32 @@ import{showEditingModal} from './modal/display-modal.js'
 
 export function genererEditMode(){ //* * * display editing interface or visitor
 
+    let btLogin = document.querySelector(".btn-login");
+
     if(checkToken()){ //* * * if a token is received from login request
         document.querySelector(".editor-mode").style.display="block"; //* * * display black banner on top
         document.querySelector(".filters").style.display="none"; //* * * hide filters
         displayBtnModify(true);
+        
+        btLogin.textContent = "Logout";
+        btLogin.addEventListener("click",toggleLog); // call fonction to logout, event will be caught by "togggleLog"
 
     }
     else{ //* * * login failed
         document.querySelector(".editor-mode").style.display="none"; //* * * hide black banner
         document.querySelector(".filters").style.display=""; //* * * show filters (flex by default)
         displayBtnModify(false);
+
     }
     
 } //* * *  end of GenererEditMode function
+
+function toggleLog(event){ // to log out
+    event.preventDefault(); 
+    sessionStorage.setItem("token", ""); // , we delete token 
+    location.href=""; //and refresh
+}
+
 
 function checkToken(){ //* * *  check if connection token is received from api
     let userConnected = false;

@@ -111,7 +111,7 @@ export async function validFormAjout(){ //* * * form is valid, button is clickab
     let resp = await addNewProject(url,body); //* * *  call function from "requetes" module
     
     if (resp[0]===201){ //* * * if response status sent from api is 201 (insertion ok)
-        await updateMainGallery(); //* * * update projets gallery in main window
+        await updateMainGallery(true); //* * * update projets gallery in main window. Parameter true is sent to force a validation message
     }
 
 } //* * * end of function
